@@ -11,7 +11,9 @@ const PORT = 5000
 const DIRECTORY = `${__dirname}/temp/images/`
 
 app.get('/', (req, res) => {
-  res.send('Home')
+  res.send(`<p>To view the list of images use the endpoint <a href="/image">/image</a></p>
+            <p>To view a particular image use the endpoint /image/:id <p>
+  `)
 })
 
 //INDEX ROUTE
@@ -38,7 +40,6 @@ app.post('/image',(req,res)=>{
         if(err) {
             return console.log(err);
         }
-        console.log("The file was saved!");
         res.send("File Uploaded")
     }); 
   }catch(error){
